@@ -1,7 +1,7 @@
 # 3D-Bivariate
 Generates a 3D bivariate normal distribution with matplotlib trisurf.
 
-Note: this code works for discrete data which is to be modeled approximately as a bivariate normal distribution. Simply use numpy.meshgrid for continuous data.
+Note: this code works for discrete data which is to be modeled _approximately_ as a bivariate normal distribution. Simply use numpy.meshgrid for continuous data.
 
 On the x and y axes, we have the independent variables and the z axis is probability density. The code includes padding with zeros for x-y pairs that do not exist in the dataset.
 
