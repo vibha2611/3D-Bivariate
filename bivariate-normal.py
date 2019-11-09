@@ -45,7 +45,7 @@ for i in range(len(z_score)):
 for i in range(len(x_values)):
     plot_points.append((x_values[i], y_values[i], z_values[i]))
 
-fill_y=np.arange(min(df['Absolute Humidity (g/m³)']), max(df['Absolute Humidity (g/m³)']), 0.1)
+fill_y=np.arange(min(df['column2']), max(df['column2']), 0.1)
 fill_y=fill_y.astype(float)
 for m in range(len(y_values)):
     for n in range(len(fill_y)):
