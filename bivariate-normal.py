@@ -7,20 +7,20 @@ import math
 from mpl_toolkits.mplot3d import Axes3D
 
 #read data
-df = pd.read_excel(r"C:\Users\vibha\Documents\silkworm data.xlsx")
+df = pd.read_excel(r"filepath") #file path of the excel data
 
-#set axes values (x=temperature, y=humidity)
-x_values = df['Temperature (°C)']
-y_values = df['Absolute Humidity (g/m³)']
+#set axes values (x=column1, y=column2)
+x_values = df['column1']
+y_values = df['column2']
 z_values = []
 plot_points = []
 z_score = []
 
-#calculate correlation, std dev, mean for temp, humidity
+#calculate correlation, std dev, mean for column1, column2
 x_mean = statistics.mean(x_values)
 y_mean = statistics.mean(y_values)
-corr = df[['Temperature (°C)', 'Absolute Humidity (g/m³)']].corr()
-corr = abs(corr['Temperature (°C)'].iloc[1])
+corr = df[['column1', 'column2']].corr()
+corr = abs(corr['column1'].iloc[1])
 x_dev = statistics.stdev(x_values)
 y_dev = statistics.stdev(y_values)
 print (x_dev, y_dev, x_mean, y_mean, corr)
@@ -34,7 +34,6 @@ for i in range(len(x_values)):
     combine_calc = (2*corr*(x_values[i]-x_mean)*(y_values[i]-y_mean))/(x_dev*y_dev)
     z = x_calc+y_calc-combine_calc
     z_score.append(z)
-
 
 #calculate probability density
 const=1/(2*math.pi*x_dev*y_dev*np.sqrt(1-corr**2))
@@ -72,8 +71,8 @@ x=[val[0] for val in plot_points]
 y=[val[1] for val in plot_points]
 z=[val[2] for val in plot_points]
 
-ax.set_xlabel('<column_1>')
-ax.set_ylabel('<column_2>')
+ax.set_xlabel('column_1')
+ax.set_ylabel('column_2')
 ax.set_zlabel("Probability density")
 ax.set_title("Bivariate normal distribution")
 
