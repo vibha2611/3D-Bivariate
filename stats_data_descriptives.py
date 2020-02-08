@@ -1,24 +1,36 @@
+#importing libraries
 import statistics
 import matplotlib.pyplot as plt
 import pandas as pd
 from random import sample
 
-population=pd.read_excel(r"C:\Users\vibha\Documents\PSC.xlsx")
-population=population["Period (ms)"]
+#extracting column of data
+population=pd.read_excel(filename)
+population=population["column_name"]
+
+#initialise lists for data and means
 period=[]
 sample_means=[]
 
-for i in range(len(population)-1):
-    period.append(population[i])
-print(statistics.mean(period))
-print(statistics.variance(period))
+#set sampling parameters
+number_of_samples=int(input("Enter number of samples: "))
+sample_size=int(input("Enter sample size: "))
 
-for i in range(2000):
-    x=statistics.mean(sample(period, 30))
+#converting the population into list form
+for i in range(len(population)):
+    period.append(population[i])
+    
+#sampling
+for i in range(number_of_samples):
+    x=statistics.mean(sample(column_name, sample_size))
     sample_means.append(x)
 
+#calculating population and sample descriptives
+print(statistics.mean(period))
+print(statistics.variance(period))
 print(statistics.mean(sample_means))
 print(statistics.variance(sample_means))
-plt.hist(sample_means, bins=80)
-plt.show()
 
+#visualising the data
+plt.hist(sample_means, bins=sqrt(sample_size))
+plt.show()
