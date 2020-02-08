@@ -33,4 +33,6 @@ print(statistics.variance(sample_means))
 
 #visualising the data
 plt.hist(sample_means, bins=sqrt(sample_size))
+plt.xlabel("Sample means")
+plt.ylabel("Frequency")
 plt.show()
