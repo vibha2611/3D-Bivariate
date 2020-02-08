@@ -9,7 +9,7 @@ population=pd.read_excel(filename)
 population=population["column_name"]
 
 #initialise lists for data and means
-period=[]
+column_name=[]
 sample_means=[]
 
 #set sampling parameters
@@ -18,7 +18,7 @@ sample_size=int(input("Enter sample size: "))
 
 #converting the population into list form
 for i in range(len(population)):
-    period.append(population[i])
+    column_name.append(population[i])
     
 #sampling
 for i in range(number_of_samples):
