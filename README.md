@@ -1,6 +1,6 @@
 # Statistics
 
-bivariate-normal.py
+<h2>bivariate-normal.py</h2>
 
 Generates a 3D bivariate normal distribution with matplotlib trisurf.
 
@@ -10,7 +10,7 @@ On the x and y axes, we have the independent variables and the z axis is probabi
 
 Coordinates which are padded onto the data will by default have a spacing of one unit, with a z coordinate (probability density) of zero.
 
-central-limit-theorem.py
+<h2>central-limit-theorem.py</h2>
 
 A proof of the central limit theorem using a column of data from a csv/ xls file.
 
